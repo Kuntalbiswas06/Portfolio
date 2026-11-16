@@ -1,0 +1,11 @@
+{
+  "name": "kuntal-biswas-portfolio",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Cinematic particle-portrait developer portfolio (static site: Three.js + GSAP + Lenis, all vendored).",
+  "scripts": {
+    "dev": "npx --yes serve . -l 5173",
+    "start": "npx --yes serve . -l 5173",
+    "build": "echo \"No build step: this is a static site. Deploy the folder as-is (Netlify, Vercel, GitHub Pages).\""
+  }
+}

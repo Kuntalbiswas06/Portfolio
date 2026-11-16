@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Kuntal Biswas — Software Engineer in the Making</title>
+<meta name="description" content="Portfolio of Kuntal Biswas — B.Tech CSE student building backend systems, exploring cloud and DevOps.">
+<meta name="theme-color" content="#050506">
+<link rel="preload" href="public/fonts/instrument-serif-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="public/images/profile.jpg" as="image">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<canvas id="gl" aria-hidden="true"></canvas>
+<div class="spot" aria-hidden="true"></div>
+<div class="cursor" aria-hidden="true"><i class="c-dot"></i><i class="c-ring"><b class="c-label"></b></i></div>
+<div class="progress" aria-hidden="true"><i></i></div>
+
+<!-- preloader -->
+<div class="loader" id="loader" role="status">
+  <span class="mono">Reconstructing portrait</span>
+  <span class="loader-pct display" id="loaderPct">0</span>
+</div>
+
+<!-- navigation -->
+<header class="nav" id="nav">
+  <div class="pill-nav">
+    <a class="nav-logo" href="#hero" data-nav aria-label="Kuntal Biswas, back to top">KB<span class="nm"> Kuntal Biswas</span></a>
+    <nav class="nav-links" aria-label="Primary">
+      <a href="#about" data-nav>About</a>
+      <a href="#skills" data-nav>Capabilities</a>
+      <a href="#work" data-nav>Projects</a>
+      <a href="#journey" data-nav>Journey</a>
+      <a href="#contact" data-nav>Contact</a>
+    </nav>
+    <a class="nav-resume" id="navResume" href="public/Kuntal_Biswas_Resume.pdf" download data-magnetic>Download Resume</a>
+    <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false"><i></i><i></i></button>
+  </div>
+</header>
+<div class="menu" id="menu" aria-hidden="true">
+  <a href="#about" data-nav>About</a><a href="#skills" data-nav>Capabilities</a><a href="#work" data-nav>Projects</a>
+  <a href="#journey" data-nav>Journey</a><a href="#contact" data-nav>Contact</a>
+</div>
+
+<main>
+<!-- ================= 01 HERO ================= -->
+<section class="hero" id="hero" data-section="Intro">
+  <div class="hero-pin" id="heroPin">
+    <img class="hero-fallback" src="public/images/profile.jpg" alt="Portrait of Kuntal Biswas" width="943" height="1042">
+
+    <div class="hero-meta mono"><span>(01)</span><span>Portfolio</span></div>
+    <div class="hero-assemble mono" id="assembleLabel"><span>Particles → portrait</span><b id="assemblePct">0%</b></div>
+    <div class="hero-cue mono" id="heroCue"><span>Scroll</span><i></i></div>
+
+    <div class="hero-text" id="heroText">
+      <p class="mono hello" data-h="fade">Hello, I’m</p>
+      <h1 class="name" aria-label="Kuntal Biswas">
+        <span class="mask"><span class="line" data-h="line">Kuntal</span></span>
+        <span class="mask"><span class="line" data-h="line">Biswas<em>.</em></span></span>
+      </h1>
+      <p class="role" data-h="fade">Software Engineer in the Making.</p>
+      <p class="tagline" data-h="fade">Building systems. Solving problems. Exploring technology.</p>
+      <p class="typed mono" data-h="fade"><span class="dash">—</span> <span id="typed"></span><i class="caret"></i></p>
+      <p class="intro" data-h="fade">A developer who enjoys understanding how things work, solving engineering problems and turning ideas into functional software.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 02 ABOUT ================= -->
+<section class="sec about" id="about" data-section="About">
+  <div class="sec-head"><span class="mono">(02)</span><span class="mono">About</span><i class="rule"></i></div>
+
+  <h2 class="display xl" data-split>A developer who enjoys understanding <em>how things work.</em></h2>
+
+  <div class="about-grid">
+    <figure class="about-photo" data-cursor="Hi">
+      <div class="ph-mask" id="phMask"><img src="public/images/profile.jpg" alt="Kuntal Biswas" loading="lazy" data-parallax width="943" height="1042"></div>
+      <figcaption class="mono">Kuntal Biswas — B.Tech CSE</figcaption>
+    </figure>
+
+    <div class="about-copy">
+      <p class="lead" data-split>I’m Kuntal Biswas, a B.Tech Computer Science and Engineering student at Narula Institute of Technology, India. I’m passionate about software engineering, backend development, problem-solving and building useful digital products.</p>
+      <p data-split>I started with programming fundamentals, then moved into full-stack development by building real projects. Along the way the backend became the part I’m most drawn to: how data flows, how services talk to each other, and how systems are designed to scale.</p>
+      <p data-split>I learn best by building. Projects like MaanDrishti, SwasthyaSetu and ReliefRoute are how I turn ideas about verification, healthcare access and disaster relief into working software — and how I find out what I still need to learn.</p>
+
+      <dl class="facts">
+        <div><dt class="mono">Education</dt><dd>B.Tech, Computer Science &amp; Engineering<br>Narula Institute of Technology, India</dd></div>
+        <div><dt class="mono">Direction</dt><dd>Java Backend Development<br>Cloud Computing · DevOps</dd></div>
+        <div><dt class="mono">Interested in</dt><dd>Backend architecture<br>Scalable applications</dd></div>
+        <div><dt class="mono">Approach</dt><dd>Learning through practical projects</dd></div>
+      </dl>
+    </div>
+  </div>
+</section>
+
+<!-- ================= IDENTITY ================= -->
+<section class="sec identity" id="identity" data-section="Identity">
+  <div class="sec-head"><span class="mono">What I do</span><i class="rule"></i></div>
+  <div class="id-grid">
+    <div class="id-left">
+      <div class="id-tabs" role="tablist" aria-label="What I do" id="idTabs"></div>
+      <p class="id-text" id="idText" aria-live="polite"></p>
+      <ul class="id-tags" id="idTags"></ul>
+    </div>
+    <div class="id-stage" id="idStage" aria-hidden="true"></div>
+  </div>
+</section>
+
+<!-- ================= 03 SKILLS ================= -->
+<section class="sec skills" id="skills" data-section="Skills">
+  <div class="sec-head"><span class="mono">(03)</span><span class="mono">Technical skills</span><i class="rule"></i></div>
+  <h2 class="display xl" data-split>The tools I build <em>with</em> — and the ones I’m growing into.</h2>
+
+  <div class="skills-grid">
+    <ol class="cats" id="cats" role="tablist" aria-label="Skill categories"></ol>
+    <div class="stage" id="stage" aria-live="polite">
+      <p class="stage-blurb mono" id="stageBlurb"></p>
+      <ul class="chips" id="chips"></ul>
+    </div>
+  </div>
+
+  <div class="marquee" aria-hidden="true">
+    <div class="m-row" id="mRow1"></div>
+    <div class="m-row" id="mRow2"></div>
+  </div>
+  <p class="skills-note mono">Levels reflect where I am today — “Using” means I build with it, “Exploring” means I’m actively learning it.</p>
+</section>
+
+<!-- ================= 04 WORK ================= -->
+<section class="sec work" id="work" data-section="Work">
+  <div class="sec-head"><span class="mono">(04)</span><span class="mono">Featured projects</span><i class="rule"></i></div>
+  <h2 class="display xl" data-split>Ideas turned into <em>working software.</em></h2>
+  <div class="projects" id="projects"></div>
+</section>
+
+<!-- ================= 05 JOURNEY ================= -->
+<section class="sec journey" id="journey" data-section="Journey">
+  <div class="sec-head"><span class="mono">(05)</span><span class="mono">Development journey</span><i class="rule"></i></div>
+  <h2 class="display xl" data-split>One step at a time, <em>one system at a time.</em></h2>
+  <ol class="timeline" id="timeline"><li class="tl-line" aria-hidden="true"><i id="tlFill"></i></li></ol>
+</section>
+
+<!-- ================= GITHUB ================= -->
+<section class="sec github" id="github" data-section="GitHub">
+  <div class="sec-head"><span class="mono">Open source activity</span><i class="rule"></i></div>
+  <h2 class="display xl" data-split>Public work, straight from GitHub.</h2>
+  <div class="gh-body" id="ghBody"><p class="gh-note">Loading public data…</p></div>
+</section>
+
+<!-- ================= 06 CONTACT ================= -->
+<section class="sec contact" id="contact" data-section="Contact">
+  <div class="sec-head"><span class="mono">(06)</span><span class="mono">Contact</span><i class="rule"></i></div>
+  <h2 class="display mega" data-split>Good ideas deserve to be built.</h2>
+  <p class="contact-sub">Interested in software engineering, building products or collaborating on something meaningful? Let’s connect.</p>
+  <ul class="links" id="links"></ul>
+  <footer class="foot mono">
+    <span>© <span id="year"></span> Kuntal Biswas</span>
+    <span>Designed &amp; built by hand</span>
+    <a href="#hero" data-nav data-cursor="Up">Back to top ↑</a>
+  </footer>
+</section>
+</main>
+
+<div class="toast mono" id="toast" role="status"></div>
+
+<script src="vendor/gsap.min.js"></script>
+<script src="vendor/ScrollTrigger.min.js"></script>
+<script src="vendor/lenis.min.js"></script>
+<script type="module" src="js/main.js"></script>
+<noscript><style>.loader{display:none}.hero-fallback{opacity:.9!important;display:block!important}.hero-text *{opacity:1!important;transform:none!important}</style></noscript>
+</body>
+</html>
