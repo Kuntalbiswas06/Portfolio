@@ -1,50 +1,67 @@
 # Kuntal Biswas — Cinematic Portfolio
 
-Static site: **Three.js** particle portrait (built from your real photo) + **GSAP ScrollTrigger** + **Lenis**.
-All libraries, fonts and tech logos are vendored in the repo, so it works with no CDN and no build step.
+A cinematic, interactive developer portfolio featuring a real-photo particle portrait powered by Three.js, smooth scrolling, and immersive scroll animations.
 
-## Run it
+Built with vanilla JavaScript, HTML, CSS, Three.js, GSAP, ScrollTrigger, and Lenis.
+
+## Features
+
+- Interactive 3D particle portrait generated from a real photograph.
+- Three.js-powered WebGL particle animation.
+- GSAP and ScrollTrigger scroll-based animations.
+- Lenis smooth scrolling.
+- Responsive design for desktop, tablet, and mobile.
+- Custom cursor and interactive UI effects.
+- Optimized rendering and particle budgets.
+- Reduced-motion accessibility support.
+- Fallback photograph for unsupported WebGL devices.
+- Self-hosted libraries, fonts, and assets.
+
+## Tech Stack
+
+- HTML5
+- CSS3
+- JavaScript
+- Three.js
+- GSAP
+- GSAP ScrollTrigger
+- Lenis
+
+## Run Locally
+
 ```bash
-cd portfolio
-npm run dev            # → http://localhost:5173   (uses `npx serve`)
-# or, without Node:
+git clone https://github.com/Kuntalbiswas06/Portfolio.git
+
+cd Portfolio
+
+npm run dev
+```
+
+Open `http://localhost:5173` in your browser.
+
+Alternatively:
+
+```bash
 python3 -m http.server 5173
 ```
-> Open it through a local server (not by double-clicking `index.html`): browsers block ES modules on `file://`.
 
-## "Build" / deploy
-There is no compile step. Upload the folder as-is to Netlify, Vercel, GitHub Pages or Cloudflare Pages
-(publish directory = project root, no build command).
+## Performance & Accessibility
 
-## Edit your content — `js/config.js`
-| What | Where |
-|---|---|
-| GitHub / LinkedIn / email / résumé | `LINKS` (items flagged `placeholder: true` show a **REPLACE ME** tag until you set the real URL and flip it to `false`) |
-| Typing roles | `ROLES` |
-| Skills + honest level (`using` / `exploring`) | `SKILLS` |
-| Projects: screenshot, stack, GitHub, live demo | `PROJECTS` (`image`, `stack`, `github`, `live`) |
-| Journey timeline | `JOURNEY` |
+- Adaptive particle density based on device capabilities.
+- Device pixel ratio capped for better performance.
+- Animation rendering pauses when the browser tab is hidden.
+- Portrait rendering is optimized based on scroll position.
+- Respects `prefers-reduced-motion`.
+- Provides a fallback for devices without WebGL support.
 
-* Résumé: put your PDF at `public/Kuntal_Biswas_Resume.pdf`, then set `placeholder: false` on `LINKS.resume`.
-* Project screenshots: drop images in `public/images/` and set e.g. `image: 'public/images/maandrishti.png'`.
-* Your photo: `public/images/profile.jpg` (a plain/light background works best — it is removed automatically).
-  A tiny embedded copy lives in `js/photo-fallback.js` as a safety net; regenerate it if you change the photo.
+## Author
 
-## Structure
-```
-index.html            markup
-css/style.css         design tokens, layout, responsive, reduced-motion
-js/config.js          ALL editable content
-js/portrait.js        image → particles engine (canvas sampling, shaders, mouse, scroll states)
-js/previews.js        animated placeholder project previews
-js/main.js            Lenis + GSAP timeline, sections, cursor, nav
-vendor/               three, gsap, ScrollTrigger, lenis (pinned versions)
-public/               images, icons (devicon, MIT), self-hosted fonts
-```
+**Kuntal Biswas**
 
-## Performance & accessibility notes
-* Particle budget: ~28k desktop / ~16k tablet / ~9k mobile (reduced a further 25% on ≤4-core CPUs); DPR capped.
-* Single `requestAnimationFrame` loop for WebGL; GSAP ticker drives Lenis; render paused when the tab is hidden; portrait skipped once you scroll past the hero.
-* `prefers-reduced-motion`: no smooth scroll, no scroll choreography, portrait shown fully assembled.
-* No WebGL / context lost: the original photograph is shown instead.
-* Cursor, spotlight and magnetic effects only run for fine pointers (not touch).
+- GitHub: https://github.com/Kuntalbiswas06
+- Portfolio: Add your deployed portfolio URL here.
+- LinkedIn: Add your LinkedIn profile URL here.
+
+---
+
+If you like this project, consider giving it a star!
